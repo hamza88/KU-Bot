@@ -24,7 +24,7 @@ new Vue({
             if(response.data == "\n") {
               response.data = "Sorry I cant understand what you are saying.";
             }
-            response.data = '';
+            response.data = 'Sorry I cant understand what you are saying.';
             this.$broadcast('AddMessage',response.data,false);
         });
       }

@@ -1,11 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use Symfony\Component\Console\Application;
-use App\Http\Command\pythonCommand;
-
 use Illuminate\Http\Request;
-use App\Http\Controllers\fileHandler;
 use App\Http\Controllers\Commander;
 use App\Http\Controllers\Filter;
 
@@ -21,25 +17,17 @@ class HomeController extends Controller
     {
         $question = $request->input('question');
         $answer = "I do not get it.";
-        if(!Filter::spamCheck($question)) {
-
-            $process = new Process('./pyRun Bot.Chat.Ask "' . $question . '"');
-            $answer = $process->run();
-
-            // executes after the command finishes
-            if (!$process->isSuccessful()) {
-              throw new ProcessFailedException($process);
-            } else{
-                echo $answer;
-                return true;
+        $spamWord = Filter::spamCheck($question);
+        if(!$spamWord) {
+            $process = Commander::runProcess('./pyRun Bot.Chat.Ask "' . $question . '"');
+            if($process){
+              $process->clearErrorOutput();
+              $answer = $process->getOutput();
+              return $answer;
             }
-
         } else {
             // spam words found on the input
             // TODO: store spam to database
-            echo "Please do not use spam words. Be a good guy";
-        }
-
+            return "Please do not use spam words. Be a good guy. \n" . "Remove the word " . $spamWord;
+         }
     }
-
-}

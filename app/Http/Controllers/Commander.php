@@ -16,20 +16,13 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class Commander extends Controller
 {
-    public function pythonCommand($command){
 
-        $process = new Process($command);
-        $process->run();
-
-        // executes after the command finishes
-        if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
-            return false;
-        }
-
-        $process->clearErrorOutput();
-        return $process->getOutput();
-
+  public function runProcess($command){
+    $process = new Process($command);
+    $process->run();
+    if (!$process->isSuccessful()) {
+      throw new ProcessFailedException($process);
+    } else{
+        return $process;
     }
-
-}
+  }

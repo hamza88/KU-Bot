@@ -12,4 +12,4 @@ class Chat:
 
 	@staticmethod
 	def hello():
-		print "hello"
+		return "hello"

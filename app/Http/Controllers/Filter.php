@@ -9,15 +9,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Commander;
-use App\Http\Controllers\fileHandler;
 
 class Filter extends controller
 {
-    public function spamCheck($text){
-
-        $textToAppend = "kernel.respond wordFilter(\"$text\")";
-        fileHandler::appendToFile('python/spamFilter.py'. $textToAppend);
-        Commander::pythonCommand('python python/spamFilter.py');
+  /**
+  * param $text
+  * return true if spam is found
+  */
+  public function spamCheck($text){
+    $process = Commander::runProcess('./pyRun spamFilter.SpamFilter.wordFilter "' . $text . '"');
+    if($process->getOutput() == "False"){
+      return False;
+    } else {
+      return $process->getOutput();
     }
+  }
 
 }
