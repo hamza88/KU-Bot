@@ -2,32 +2,49 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Commander;
+use App\Http\Controllers\Console;
 use App\Http\Controllers\Filter;
+use App\Http\Controllers\NLP;
 
 class HomeController extends Controller
 {
 
+    $errorMessages = array('
+        "I\'m Really sorry about that but I am not able to anwer that question. Please try asking something else",
+        "Oh Snap! My circuits broken. Apologies by devs. :)",
+        "Here is a suggestion for you. Ask something else.",
+        "404 error Answer not found!"
+    ');
+
     public function index()
     {
-        return view('index');
+        $trending = Trending::getTopics();
+        return view('index', $trending);
     }
 
-    public function ask(Request $request)
-    {
-        $question = $request->input('question');
-        $answer = "I do not get it.";
-        $spamWord = Filter::spamCheck($question);
+    public function master(){
+        $userResponse = $request->input('question');
+
+        $spamWord = Filter::spamCheck($userResponse);
+
+        // Spam not found
         if(!$spamWord) {
-            $process = Commander::runProcess('./pyRun Bot.Chat.Ask "' . $question . '"');
-            if($process){
-              $process->clearErrorOutput();
-              $answer = $process->getOutput();
-              return $answer;
+            $response = NLP::classify($userResponse);
+
+            if($response == "Chat"){
+                $answer = Chat::ask($userResponse);
+                if($answer == null || $answer == ""){
+                        $answer = Scraper::scrapeWeb($userResponse);
+                }
+                return $answer;
             }
-        } else {
-            // spam words found on the input
-            // TODO: store spam to database
-            return "Please do not use spam words. Be a good guy. \n" . "Remove the word " . $spamWord;
-         }
+            elseif($response == 'Request'){
+                $requestResponse = Request::handleRequest($response);
+                if($requestResponse){
+                    return $requestResponse;
+                } else{
+                    return $this->message->Random();
+                }
+            }
+        }
     }

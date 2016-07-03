@@ -14,7 +14,7 @@ use App\Http\Command\pythonCommand;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
-class Commander extends Controller
+class Console extends Controller
 {
 
   public function runProcess($command){
