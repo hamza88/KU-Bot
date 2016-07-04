@@ -5,26 +5,30 @@ import sys
 import inspect
 import importlib
 import os
+import imp
 
 if __name__ == "__main__":
     cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile( inspect.currentframe() ))[0]))
     if cmd_folder not in sys.path:
         sys.path.insert(0, cmd_folder)
-
+        
+    path = sys.argv[1]
+    
     # get the second argument from the command line
-    methodname = sys.argv[1]
+    methodname = sys.argv[2]
 
     # split this into module, class and function name
     modulename, classname, funcname = methodname.split(".")
-
+    
     # get pointers to the objects based on the string names
-    themodule = importlib.import_module(modulename)
+    themodule = imp.load_source(modulename,path)
+    print type(themodule)
     theclass = getattr(themodule, classname)
     thefunc = getattr(theclass, funcname)
 
     # pass all the parameters from the third until the end of
     # what the function needs & ignore the rest
     args = inspect.getargspec(thefunc)
-    z = len(args[0]) + 2
-    params=sys.argv[2:z]
+    z = len(args[0]) + 3
+    params=sys.argv[3:z]
     thefunc(*params)
