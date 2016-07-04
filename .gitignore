@@ -6,5 +6,14 @@
 /public/css
 /public/js
 /public/__pycache__
-/public/venv
+/public/python/scraper/drivers
+/public/python/scraper/ghostdriver.log
+/public/python/scraper/webpage.html
+/public/python/scraper/site.html
+/public/python/bot/aimlFiles
+/public/python/bot/aiml
+/public/python/bot/bot_brain.brn
+/public/python/bot/aimlFiles/os
+/public/python/bot/bot_brain.brn
+/public/python/bot/os
 .env

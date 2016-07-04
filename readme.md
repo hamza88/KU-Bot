@@ -1,46 +1,13 @@
 #  Dude Chatbot
 
-This is a web application which acts as a front-end for 'Dude' Chatbot.
+Dude is bot which is developed for Kathmandu University. Primary feature of Dude to make it easy for new students and people get easy access on information. Primary feature is that it can answer questions related to admission and entrance examination.
 
-## Getting Started
-
-Clone this repo to your machine and inside your cloned repo directory run these commands for installing composer packages.
-
-```bash
-composer install
-```
-
-Install front-end packages.
-
-```bash
-npm install
-```
-
-## Debugging and Testing
-
-Run the following command in the terminal.
-
-```bash
-php -S localhost:80 -t public
-```
-
-Compiling front-end assets
-
-```bash
-gulp
-```
-
-Then in the browser, goto [http://localhost](http://localhost) to test the app.
-
-## Running python files
-Executable file pyRun makes it easy to call any method on any py files
-```bash
-./PyRun Filename.ClassName.Method1 Param1 Param2
-```
 
 ## Built With
-
+* pyAIML - python interpretor for AIML
+* Python - for working on NLP
 * [Lumen](https://lumen.laravel.com) - for Backend Framework
 * [PureCSS](http://purecss.io) - for CSS Framework
 * [Vue](http://vuejs.org) - for JS Framework
 * [Vue Resource](https://github.com/vuejs/vue-resource) - for AJAX Requests from Vue files
+
