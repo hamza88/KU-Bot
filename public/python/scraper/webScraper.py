@@ -126,6 +126,8 @@ class fileLinkScrape(object):
 
     def verifyFileLink(self,link):
         # TODO: Create a regex to identify file extension in the url
-        
+        regex = re.compile('.pdf$')
+        links = regex.match(url)
 
-
+        for pdflink in links:
+            

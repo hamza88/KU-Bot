@@ -17,12 +17,14 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class Console extends Controller
 {
 
-  public function runProcess($command){
+  public static function runProcess($command)
+  {
     $process = new Process($command);
     $process->run();
     if (!$process->isSuccessful()) {
       throw new ProcessFailedException($process);
-    } else{
-        return $process;
+    } else {
+      return $process;
     }
   }
+}

@@ -6,6 +6,6 @@ $app->get('/', [
 ]);
 
 $app->post('/ask', array(
-    'as' => 'ask',
-    'uses' => 'HomeController@ask'
+    'as' => 'master',
+    'uses' => 'HomeController@master'
 ));

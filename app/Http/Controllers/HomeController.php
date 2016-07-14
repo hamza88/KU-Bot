@@ -3,32 +3,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Console;
+use App\Http\Controllers\Chat;
 use App\Http\Controllers\Filter;
 use App\Http\Controllers\NLP;
 
 class HomeController extends Controller
 {
 
-    $errorMessages = array('
-        "I\'m Really sorry about that but I am not able to anwer that question. Please try asking something else",
+    public $errorMessages = array(
+        "I'm Really sorry about that but I am not able to anwer that question. Please try asking something else",
         "Oh Snap! My circuits broken. Apologies by devs. :)",
         "Here is a suggestion for you. Ask something else.",
         "404 error Answer not found!"
-    ');
+    );
 
     public function index()
     {
-        $trending = Trending::getTopics();
-        return view('index', $trending);
+        //Todo: Get trending topics and send to browser
+        return view('index');
     }
 
-    public function master(){
+    public function master(Request $request){
         $userResponse = $request->input('question');
+        echo "question got";
 
         $spamWord = Filter::spamCheck($userResponse);
 
         // Spam not found
-        if(!$spamWord) {
+        if(!$spamWord)
+            $NLP = new NLP;
             $response = NLP::classify($userResponse);
 
             if($response == "Chat"){

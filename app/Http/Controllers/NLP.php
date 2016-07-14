@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\Tests\Controller;
 class NLP extends Controller
 {
 
-    public function classify($text){
+    public static function classify($text){
 
         $topics = NLP::setTopics($text);
 
@@ -37,9 +37,5 @@ class NLP extends Controller
         }
     }
 
-
-    public function setTopics($text) {
-        $topics =
-    }
 
 }

@@ -16,7 +16,7 @@ class Filter extends controller
   * param $text
   * return true if spam is found
   */
-  public function spamCheck($text){
+  public static function spamCheck($text){
     $process = Commander::runProcess('./pyRun spamFilter.SpamFilter.wordFilter "' . $text . '"');
     if($process->getOutput() == "False"){
       return False;

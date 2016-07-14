@@ -9,7 +9,7 @@ class Chat extends Controller
 {
 
 
-    public function ask($question)
+    public static function ask($question)
     {
             $process = Console::runProcess('./pyRun Bot.Chat.Ask "' . $question . '"');
             if($process){

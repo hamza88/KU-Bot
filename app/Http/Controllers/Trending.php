@@ -9,10 +9,10 @@
 namespace App\Http\Controllers;
 
 
-class Trending extends Controllers
+class Trending extends Controller
 {
 
     public function getTopics(){
-        return $topics;
+
     }
 }
