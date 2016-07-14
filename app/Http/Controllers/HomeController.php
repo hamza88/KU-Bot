@@ -6,6 +6,9 @@ use App\Http\Controllers\Console;
 use App\Http\Controllers\Chat;
 use App\Http\Controllers\Filter;
 use App\Http\Controllers\NLP;
+use App\Http\Controllers\LinkHelper;
+
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,31 +26,40 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function master(Request $request){
+    public function master(Request $request)
+    {
         $userResponse = $request->input('question');
-        echo "question got";
 
-        $spamWord = Filter::spamCheck($userResponse);
+            // Todo: Fix error in spamword. Its giving 500 error
+//        $spamWord = Filter::spamCheck($userResponse);
+        $spamWord = false;
+//
+//        // Spam not found
+        if(!$spamWord) {
 
-        // Spam not found
-        if(!$spamWord)
-            $NLP = new NLP;
-            $response = NLP::classify($userResponse);
+            // Todo: NLP classify not working
+//            $response = NLP::classify($userResponse);
+            $response['type'] = "Scrape";
+            $response['keyword'] = "prospectus";
 
-            if($response == "Chat"){
+            if ($response['type'] == "Chat") {
                 $answer = Chat::ask($userResponse);
                 if($answer == null || $answer == ""){
                         $answer = Scraper::scrapeWeb($userResponse);
                 }
                 return $answer;
             }
-            elseif($response == 'Request'){
-                $requestResponse = Request::handleRequest($response);
+
+            elseif($response['type'] == "Request"){
+
+                $requestResponse = LinkHelper::handleRequest($response['keyword']);
                 if($requestResponse){
                     return $requestResponse;
                 } else{
-                    return $this->message->Random();
+                    return "well I'm sorry";
                 }
             }
         }
+        return "well I'm sorry";
     }
+}

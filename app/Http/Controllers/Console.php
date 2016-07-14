@@ -8,9 +8,6 @@
 
 namespace App\Http\Controllers;
 
-use Symfony\Component\Console\Application;
-use App\Http\Command\pythonCommand;
-
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 

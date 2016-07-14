@@ -19,12 +19,11 @@ new Vue({
       'SendMessage' : function(message) {
         this.$broadcast('AddMessage',message,true);
 
-        this.$http.post('/',{question: message}).then(function(response) {
+        this.$http.post('/master',{question: message}).then(function(response) {
             console.log(response);
             if(response.data == "\n") {
               response.data = "Sorry I cant understand what you are saying.";
             }
-            response.data = 'Sorry I cant understand what you are saying.';
             this.$broadcast('AddMessage',response.data,false);
         });
       }

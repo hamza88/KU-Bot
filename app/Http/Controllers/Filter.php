@@ -8,20 +8,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Commander;
+use App\Http\Controllers\Console;
 
-class Filter extends controller
+class Filter extends Controller
 {
   /**
-  * param $text
-  * return true if spam is found
-  */
-  public static function spamCheck($text){
-    $process = Commander::runProcess('./pyRun spamFilter.SpamFilter.wordFilter "' . $text . '"');
-    if($process->getOutput() == "False"){
+   * param $text
+   * return true if spam is found
+   */
+  public static function spamCheck($text)
+  {
+    $console = new Console;
+    $process = $console->runProcess('./pyRun spamFilter.SpamFilter.wordFilter "' . $text . '"');
+    $output = $process->getOutput();
+    if($output == "False"){
       return False;
     } else {
-      return $process->getOutput();
+      return $output;
     }
   }
 

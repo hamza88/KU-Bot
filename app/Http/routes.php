@@ -5,7 +5,7 @@ $app->get('/', [
     'uses' => 'HomeController@index'
 ]);
 
-$app->post('/ask', array(
+$app->post('/master', array(
     'as' => 'master',
     'uses' => 'HomeController@master'
 ));
