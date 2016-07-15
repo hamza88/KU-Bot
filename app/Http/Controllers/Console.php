@@ -17,11 +17,11 @@ class Console extends Controller
   public static function runProcess($command)
   {
     $process = new Process($command);
-    $process->run();
-    if (!$process->isSuccessful()) {
-      throw new ProcessFailedException($process);
-    } else {
-      return $process;
+    $process->start();
+
+    while ($process->isRunning()) {
+      // waiting for process to finish
     }
+    return $process;
   }
 }

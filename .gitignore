@@ -6,7 +6,7 @@
 /public/css
 /public/js
 /public/__pycache__
-/public/python/scraper/drivers
+/public/python/scraper/drivers/
 /public/python/scraper/ghostdriver.log
 /public/python/scraper/webpage.html
 /public/python/scraper/site.html

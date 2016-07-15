@@ -7,6 +7,7 @@ use App\Http\Controllers\Chat;
 use App\Http\Controllers\Filter;
 use App\Http\Controllers\NLP;
 use App\Http\Controllers\LinkHelper;
+use App\Http\Controllers\Scrape;
 
 use DB;
 
@@ -30,6 +31,8 @@ class HomeController extends Controller
     {
         $userResponse = $request->input('question');
 
+        DB::insert('insert into questions (question) VALUE (?)',[$userResponse]);
+
             // Todo: Fix error in spamword. Its giving 500 error
 //        $spamWord = Filter::spamCheck($userResponse);
         $spamWord = false;
@@ -39,14 +42,15 @@ class HomeController extends Controller
 
             // Todo: NLP classify not working
 //            $response = NLP::classify($userResponse);
-            $response['type'] = "Scrape";
-            $response['keyword'] = "prospectus";
+            $response['type'] = "Chat";
 
             if ($response['type'] == "Chat") {
                 $answer = Chat::ask($userResponse);
-                if($answer == null || $answer == ""){
-                        $answer = Scraper::scrapeWeb($userResponse);
+                if($answer == null || $answer == "" || $answer == "\n"){
+                        $answer = Scrape::scrapeGoogle($userResponse);
                 }
+                echo "The asnwer is" . $answer;
+                DB::insert('insert into questions (answer) VALUE (?)',[$answer]);
                 return $answer;
             }
 

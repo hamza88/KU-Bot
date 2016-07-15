@@ -2,7 +2,7 @@
   <ol class="chat-history__messages">
       <li class="message-box" v-for="message in messages" v-bind:class="{'message-box--sent': message.isSent, 'message-box--recieved': !message.isSent}">
           <p class="message">
-              {{ message.message }}
+              {{{ message.message }}}
           </p>
       </li>
   </ol>

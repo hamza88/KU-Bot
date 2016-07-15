@@ -22,7 +22,6 @@ if __name__ == "__main__":
     
     # get pointers to the objects based on the string names
     themodule = imp.load_source(modulename,path)
-    print type(themodule)
     theclass = getattr(themodule, classname)
     thefunc = getattr(theclass, funcname)
 
