@@ -13,7 +13,9 @@
     <div id="wrapper">
         <div class="pure-g container">
             <div class="pure-u-1 chat-history">
-                <chat-history></chat-history>
+                <chat-history>
+
+                </chat-history>
             </div>
 
             <div class="pure-u-1 chat-container">

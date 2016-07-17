@@ -1,31 +1,65 @@
-<aiml version="1.0.1" encoding="UTF-8">
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
 <!-- basic_chat.aiml -->
 
-    <category>
-        <pattern>HELLO</pattern>
-        <template>
-            Hello there!
-        </template>
-    </category>
+<category>
+    <pattern>HELLO</pattern>
+    <template>
 
-    <category>
-        <pattern>HOW ARE YOU</pattern>
-        <template>
-            I'm a bot, silly!
-        </template>
-    </category>
-     <category>
-       <pattern>WHO ARE YOU</pattern>
-        <template>
-            Well, they named me DUDE.
-        </template>
-    </category>
-    <category>
-        <pattern>BYE</pattern>
-        <template>
-            Goodbye, see you next time.
-        </template>
-    </category>
-
+    </template>
+</category>
+<category>
+    <pattern>WHO ARE YOU</pattern>
+    <template>I am a chatbot.</template>
+</category>
+<category>
+    <pattern>WHAT * CALL YOU</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
+<category>
+    <pattern>* YOUR NAME</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
+<category>
+    <pattern>INTRODUCE YOURSELF</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
+<category>
+    <pattern>DO YOU HAVE ANY NAME</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
+<category>
+    <pattern>* INTRODUCTION</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
+<category>
+    <pattern>
+        * PERSONAL PROFILE</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
+<category>
+    <pattern>ARE YOU HUMAN</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
+<category>
+    <pattern>* IDENTITY</pattern>
+    <template>
+        <srai>WHO ARE YOU</srai>
+    </template>
+</category>
 
 </aiml>

@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Console;
 use App\Http\Controllers\Chat;
 use App\Http\Controllers\Filter;
 use App\Http\Controllers\NLP;
@@ -49,7 +48,6 @@ class HomeController extends Controller
                 if($answer == null || $answer == "" || $answer == "\n"){
                         $answer = Scrape::scrapeGoogle($userResponse);
                 }
-                echo "The asnwer is" . $answer;
                 DB::insert('insert into questions (answer) VALUE (?)',[$answer]);
                 return $answer;
             }

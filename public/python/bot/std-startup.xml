@@ -11,10 +11,11 @@
         <!-- Template is the response to the pattern -->
         <!-- This learn an aiml file -->
         <template>
+                <learn>python/bot/aimlFiles/learn.aiml</learn>        
         	<learn>python/bot/aimlFiles/kuFaq.aiml</learn>        
         	<learn>python/bot/aimlFiles/basic_chat.aiml</learn>
-		          <learn>python/bot/aimlFiles/ku.aiml</learn>
-              <learn>python/bot/aimlFiles/kufaq.aiml</learn>
+		<learn>python/bot/aimlFiles/ku.aiml</learn>
+                <learn>python/bot/aimlFiles/kufaq.aiml</learn>
             <!-- You can add more aiml files here -->
             <!--<learn>more_aiml.aiml</learn>-->
         </template>
