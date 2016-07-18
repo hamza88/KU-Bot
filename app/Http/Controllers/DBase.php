@@ -20,11 +20,26 @@ class DBase extends Controller
         if(!$exists){
             DB::insert('insert into questions (question) VALUES ( ?)',[$question]);
         } else {
-            // Todo: increase question count
+            DB::update('UPDATE questions SET count = count + 1 WHERE question = ?',[$question]);
         }
+        return;
     }
 
     public function insertQA($question , $answer = NULL){
         DB::insert('insert into qna (question, answer) VALUES ( ?, ?)',[$question, $answer]);
+    }
+
+    public static function insertTopic($topic){
+        $exists = DB::select('SELECT id FROM topics where topic = ?', [$topic]);
+        if(!$exists){
+            DB::insert('INSERT INTO topics (topic, count) VALUES(?,?)',[$topic,1]);
+        }else{
+            DB::update('UPDATE topics SET count = count + 1 WHERE topic = ?',[$topics]);
+        }
+        return;
+    }
+
+    public static function getTrending(){
+        return DB::select('SELECT * FROM topics ORDER BY count ASC limit 5');
     }
 }

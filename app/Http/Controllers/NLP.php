@@ -9,15 +9,14 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Console;
 
-
-use Symfony\Component\HttpKernel\Tests\Controller;
-
 class NLP extends Controller
 {
-
-    public function setTopics($text){
-        // Todo: Extract one topic from the question
-        return;
+    public static function extractPN($text){
+        $nouns = Console::runProcess('./pyRun python/nlp/Nlp.py Nlp.NLP.extractNouns ' . '\"' . $text . '\"');
+        if($nouns == False){
+            return False;
+        }
+        return json_decode($nouns,true);
     }
 
     public static function classify($text)

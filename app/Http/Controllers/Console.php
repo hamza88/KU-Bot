@@ -22,6 +22,7 @@ class Console extends Controller
     while ($process->isRunning()) {
       // waiting for process to finish
     }
-    return $process;
+    $process->clearErrorOutput();
+    return $process->getOutput();
   }
 }

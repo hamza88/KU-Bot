@@ -14,7 +14,7 @@ import re
 class Scraper(object):
     @staticmethod
     def scrapeGoogle(query):
-        driver_path = 'python/scraper/drivers/phantomjs'        
+        driver_path = 'python/scraper/drivers/phantomjs'
         url = 'https://www.google.com'
 
         browser = webdriver.PhantomJS(executable_path = driver_path)
@@ -64,14 +64,7 @@ class Scraper(object):
             print("Connection timed out")
         finally:
             browser.quit()
-    
-    @staticmethod	
+
+    @staticmethod
     def generateLink(title,href):
         return "<a href=\""+href+"\">"+title+"</a>"
-
-
-  
-scrape = Scraper()
-scrape.scrapeGoogle("kathmandu university admission")
-
-

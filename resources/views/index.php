@@ -13,6 +13,12 @@
     <div id="wrapper">
         <div class="pure-g container">
             <div class="pure-u-1 chat-history">
+                <div class="trending">
+                    <?php foreach($trending as $topic) ?>
+                    <h3>Here are the trending topics right now!</h3>
+                    <li><?php echo $topic->topic; ?></li>
+                
+                </div>
                 <chat-history>
 
                 </chat-history>

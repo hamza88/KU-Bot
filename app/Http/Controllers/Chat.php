@@ -12,9 +12,9 @@ class Chat extends Controller
     {
         $process = Console::runProcess('./pyRun python/bot/Bot.py Bot.Chat.Ask "' . $question . '"');
         if ($process) {
-            $process->clearErrorOutput();
-            $answer = $process->getOutput();
-            return $answer;
+            return $process;
+        } else {
+            return false;
         }
     }
 }

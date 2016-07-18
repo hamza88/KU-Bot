@@ -17,9 +17,7 @@ class Scrape extends Controller
     public static function scrapeGoogle($query){
         $process = Console::runProcess('./pyRun python/scraper/webScraper.py webScraper.Scraper.scrapeGoogle "'. $query .'"');
         if ($process) {
-            $process->clearErrorOutput();
-            $answer = $process->getOutput();
-            return $answer;
+            return $process;
         }
         else {
             return "Sorry I could not scrape the web";

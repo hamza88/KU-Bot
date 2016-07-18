@@ -8,7 +8,4 @@ class Chat:
 		kernel.verbose(False)
 		kernel.learn("python/bot/std-startup.xml")
 		kernel.respond("load aiml b")
-		while true:
 		print kernel.respond(question)
-
-

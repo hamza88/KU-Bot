@@ -22,13 +22,25 @@ class HomeController extends Controller
 
     public function index()
     {
-        //Todo: Get trending topics and send to browser
-        return view('index');
+        $trending = DBase::getTrending();
+        return view('index')->with('trending' , $trending);
     }
 
     public function master(Request $request)
     {
+        // input from chat box
         $userResponse = $request->input('question');
+
+        // Extract Nouns from text as topics
+        $topics = NLP::extractPN($userResponse);
+        //Insert topics into database
+        if($topics){
+            foreach($topics as $key => $value){
+                // DBase::insertTopic($topics[$key]);
+                echo $topics[$key];
+            }
+
+        }
 
         DB::insert('insert into questions (question) VALUE (?)',[$userResponse]);
 
@@ -36,32 +48,24 @@ class HomeController extends Controller
 //        $spamWord = Filter::spamCheck($userResponse);
         $spamWord = false;
 //
-//        // Spam not found
         if(!$spamWord) {
 
             // Todo: NLP classify not working
 //            $response = NLP::classify($userResponse);
             $response['type'] = "Chat";
-
             if ($response['type'] == "Chat") {
                 $answer = Chat::ask($userResponse);
-                if($answer == null || $answer == "" || $answer == "\n"){
-                        $answer = Scrape::scrapeGoogle($userResponse);
+                if($answer){
+                    return $answer;
+                }else{
+                    $answer = Scrape::scrapeGoogle($userResponse);
                 }
-                DB::insert('insert into questions (answer) VALUE (?)',[$answer]);
-                return $answer;
-            }
+                echo $answer;
 
-            elseif($response['type'] == "Request"){
-
-                $requestResponse = LinkHelper::handleRequest($response['keyword']);
-                if($requestResponse){
-                    return $requestResponse;
-                } else{
-                    return "well I'm sorry";
-                }
+                // Insert question and answer pair to db
+                DBase::insertQA($userResponse, $answer);
             }
         }
-        return "well I'm sorry";
+        echo "well I'm sorry";
     }
 }
