@@ -32,9 +32,9 @@ class DBase extends Controller
     public static function insertTopic($topic){
         $exists = DB::select('SELECT id FROM topics where topic = ?', [$topic]);
         if(!$exists){
-            DB::insert('INSERT INTO topics (topic, count) VALUES(?,?)',[$topic,1]);
+            DB::insert('INSERT INTO topics (topic) VALUE (?)',[$topic]);
         }else{
-            DB::update('UPDATE topics SET count = count + 1 WHERE topic = ?',[$topics]);
+            DB::update('UPDATE topics SET count = count + 1 WHERE topic = ?',[$topic]);
         }
         return;
     }

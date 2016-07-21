@@ -32,14 +32,13 @@ class HomeController extends Controller
         $userResponse = $request->input('question');
 
         // Extract Nouns from text as topics
-        $topics = NLP::extractPN($userResponse);
+        $nouns = NLP::extractNouns($userResponse);
+        $topics = json_decode($nouns, true);
         //Insert topics into database
         if($topics){
             foreach($topics as $key => $value){
-                // DBase::insertTopic($topics[$key]);
-                echo $topics[$key];
+                DBase::insertTopic($value);
             }
-
         }
 
         DB::insert('insert into questions (question) VALUE (?)',[$userResponse]);

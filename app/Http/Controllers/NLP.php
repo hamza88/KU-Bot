@@ -11,12 +11,9 @@ use App\Http\Controllers\Console;
 
 class NLP extends Controller
 {
-    public static function extractPN($text){
-        $nouns = Console::runProcess('./pyRun python/nlp/Nlp.py Nlp.NLP.extractNouns ' . '\"' . $text . '\"');
-        if($nouns == False){
-            return False;
-        }
-        return json_decode($nouns,true);
+    public static function extractNouns($text){
+        $nouns = Console::runProcess('./pyRun python/nlp/Nlp.py Nlp.NLP.extractNouns ' . '"' . $text . '"');
+        return $nouns;
     }
 
     public static function classify($text)
@@ -24,7 +21,7 @@ class NLP extends Controller
 
 //        $topics = NLP::setTopics($text);
 
-        $class = Console::runProcess('./pyRun Nlp.NLP.Classify ' . '\"' . $text . '\"');
+        $class = Console::runProcess('./pyRun Nlp.NLP.Classify ' . '"' . $text . '"');
 
         if ($class) {
             switch ($class) {
