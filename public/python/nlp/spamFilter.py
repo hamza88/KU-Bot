@@ -361,6 +361,6 @@ class SpamFilter:
             if word in arrBad:
                 spamWord = word
         if spamWord:
-            return spamWord
+            print spamWord
         else:
             return "False"
