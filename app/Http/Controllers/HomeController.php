@@ -14,11 +14,23 @@ class HomeController extends Controller
 {
 
     public $errorMessages = array(
-        "I'm Really sorry about that but I am not able to anwer that question. Please try asking something else",
+        "I'm really sorry about that but I am not able to anwer that question. Please try asking something else",
         "Oh Snap! My circuits broken. Apologies by devs. :)",
         "Here is a suggestion for you. Ask something else.",
         "404 error Answer not found!"
     );
+
+    public $spamErrMsg = array('
+        "Looks like you have used a spam word there. Its not allowed here you know!",
+        "Its such a bad habit to use these words.",
+        "About 0.7% of the words a person uses in the course of a day are swear words. But not here chief.",
+         "Here is a fact - Some of today’s most popular swear words have been around for more than a thousand years. Please dont swear here."
+        "No need for profanity",
+        "This is about you not me",
+        "Look, being a bot I can curse as much as you can. You see thats nothing to show off.",
+        "This is wrong in so may ways. I dont even know where to begin",
+        "You wanna see me swear ****. I can swear in so many ** languages you cant ever ** imagine. You better understand you ***",
+    ');
 
     public function index()
     {
@@ -43,11 +55,11 @@ class HomeController extends Controller
 
         DB::insert('insert into questions (question) VALUE (?)',[$userResponse]);
 
-            // Todo: Fix error in spamword. Its giving 500 error
-//        $spamWord = Filter::spamCheck($userResponse);
-        $spamWord = false;
-//
-        if(!$spamWord) {
+        $spamWord = NLP::spamCheck($userResponse);
+        if($spamWord){
+            DBase::insertSpamWord($spamWord);
+            die('');
+        }else{
 
             // Todo: NLP classify not working
 //            $response = NLP::classify($userResponse);
@@ -59,7 +71,7 @@ class HomeController extends Controller
                 }else{
                     $answer = Scrape::scrapeGoogle($userResponse);
                 }
-                echo $answer;
+                return $answer;
 
                 // Insert question and answer pair to db
                 DBase::insertQA($userResponse, $answer);

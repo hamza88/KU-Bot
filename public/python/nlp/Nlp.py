@@ -11,3 +11,11 @@ class NLP:
 			print demjson.encode(outRes)
 		else:
 			return False
+
+	@staticmethod
+	def checkClause(text):
+		l = text.split()
+		spamdict = dict((str(i), l[i]) for i in range(0,len(l)))
+		for i in range(0,len(l)):
+			if(l[i] == 'search' | l[i] == 'web' | l[i] == 'google'):
+				return l[i]

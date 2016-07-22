@@ -42,4 +42,15 @@ class NLP extends Controller
             return "Chat";
         }
     }
+
+
+    public static function spamCheck($text)
+    {
+      $process = Console::runProcess('./pyRun python/nlp/spamFilter.py spamFilter.SpamFilter.wordFilter "' . $text . '"');
+      if($process == "False"){
+        return False;
+      } else {
+        return $process;
+      }
+    }
 }

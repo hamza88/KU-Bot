@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 value="{ csrf_token() }" >
     <title>Dude Chatbot - Kathmandu University</title>
     <link rel="stylesheet" href="<?php echo elixir('css/app.css'); ?>">
+    <link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
     <header class="header pure-menu pure-menu-horizontal">

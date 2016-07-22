@@ -15,6 +15,10 @@
         	<learn>python/bot/aimlFiles/basic_chat.aiml</learn>
 		<learn>python/bot/aimlFiles/ku.aiml</learn>
                 <learn>python/bot/aimlFiles/kufaq.aiml</learn>
+                <learn>python/bot/aimlFiles/alice.aiml</learn>
+                <learn>python/bot/aimlFiles/badanswer.aiml</learn>
+                <learn>python/bot/aimlFiles/salutations.aiml</learn>
+                <learn>python/bot/aimlFiles/download.aiml</learn>
             <!-- You can add more aiml files here -->
             <!--<learn>more_aiml.aiml</learn>-->
         </template>

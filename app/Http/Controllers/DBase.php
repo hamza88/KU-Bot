@@ -40,6 +40,17 @@ class DBase extends Controller
     }
 
     public static function getTrending(){
-        return DB::select('SELECT * FROM topics ORDER BY count ASC limit 5');
+        return DB::select('SELECT * FROM topics ORDER BY count DESC limit 5');
     }
+
+    public static function insertSpamWord($spamWord){
+        $exists = DB::select('SELECT id FROM spams where word = ?', [$spamWord]);
+        if(!$exists){
+            DB::insert('INSERT INTO spams (word) VALUE (?)',[$spamWord]);
+        }else{
+            DB::update('UPDATE spams SET count = count + 1 WHERE word = ?',[$spamWord]);
+        }
+        return;
+    }
+
 }
