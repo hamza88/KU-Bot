@@ -20,17 +20,17 @@ class HomeController extends Controller
         "404 error Answer not found!"
     );
 
-    public $spamErrMsg = array('
+    public static $spamErrMsg = array(
         "Looks like you have used a spam word there. Its not allowed here you know!",
         "Its such a bad habit to use these words.",
         "About 0.7% of the words a person uses in the course of a day are swear words. But not here chief.",
-         "Here is a fact - Some of today’s most popular swear words have been around for more than a thousand years. Please dont swear here."
+         "Here is a fact - Some of today’s most popular swear words have been around for more than a thousand years. Please dont swear here.",
         "No need for profanity",
         "This is about you not me",
         "Look, being a bot I can curse as much as you can. You see thats nothing to show off.",
         "This is wrong in so may ways. I dont even know where to begin",
         "You wanna see me swear ****. I can swear in so many ** languages you cant ever ** imagine. You better understand you ***",
-    ');
+    );
 
     public function index()
     {
@@ -38,7 +38,7 @@ class HomeController extends Controller
         return view('index')->with('trending' , $trending);
     }
 
-    public function master(Request $request)
+    public static function master(Request $request)
     {
         // input from chat box
         $userResponse = $request->input('question');
@@ -53,30 +53,31 @@ class HomeController extends Controller
             }
         }
 
-        DB::insert('insert into questions (question) VALUE (?)',[$userResponse]);
+        DBase::insertQuestion($userResponse);
 
         $spamWord = NLP::spamCheck($userResponse);
         if($spamWord){
             DBase::insertSpamWord($spamWord);
-            die('');
-        }else{
+            return self::$spamErrMsg[rand(0, sizeof(self::$spamErrMsg))];
+        }else
+            $chat = Chat::ask($userResponse);
+            if($chat){
+                $answer = $chat;
+            }else{
+                // $answer = Scrape::scrapeGoogle($userResponse);
 
-            // Todo: NLP classify not working
-//            $response = NLP::classify($userResponse);
-            $response['type'] = "Chat";
-            if ($response['type'] == "Chat") {
-                $answer = Chat::ask($userResponse);
-                if($answer){
-                    return $answer;
-                }else{
-                    $answer = Scrape::scrapeGoogle($userResponse);
-                }
-                return $answer;
+                // Todo: Get similar question answer from database
+                $similarResult = DBase::getSimilar($userResponse);
+                $answer = "Did you mean - ". $similarResult;
+            }
 
-                // Insert question and answer pair to db
+            // Insert question and answer pair to db
+            if($answer && !(exists($similarResult))){
                 DBase::insertQA($userResponse, $answer);
             }
-        }
-        echo "well I'm sorry";
+
+            return $answer;
+            }
     }
+
 }

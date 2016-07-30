@@ -25,8 +25,26 @@ class DBase extends Controller
         return;
     }
 
-    public function insertQA($question , $answer = NULL){
-        DB::insert('insert into qna (question, answer) VALUES ( ?, ?)',[$question, $answer]);
+    public static function insertQA($question , $answer){
+        $exists = DB::select('select question from qna where question = ?',[$question]);
+        if(!$exists){
+            return DB::insert('insert into qna (question, answer) VALUES ( ?, ?)',[$question, $answer]);
+        } else {
+            return;
+        }
+    }
+
+    public static function getSimilar($question){
+        $result = DB::select(' SELECT *,
+            MATCH(question) AGAINST (?) AS score
+            FROM qna
+            WHERE MATCH(question) AGAINST(?)',
+            [$question, $question]
+        );
+
+        foreach ($result as $value) {
+            return ($value->question);
+        }
     }
 
     public static function insertTopic($topic){

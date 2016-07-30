@@ -14,7 +14,6 @@
         	<learn>python/bot/aimlFiles/kuFaq.aiml</learn>        
         	<learn>python/bot/aimlFiles/basic_chat.aiml</learn>
 		<learn>python/bot/aimlFiles/ku.aiml</learn>
-                <learn>python/bot/aimlFiles/kufaq.aiml</learn>
                 <learn>python/bot/aimlFiles/alice.aiml</learn>
                 <learn>python/bot/aimlFiles/badanswer.aiml</learn>
                 <learn>python/bot/aimlFiles/salutations.aiml</learn>
