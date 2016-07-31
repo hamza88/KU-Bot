@@ -1,65 +1,76 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version = "1.0" encoding="ISO-8859-1"?>
 <aiml>
 <!-- basic_chat.aiml -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            <random>
+            <li>Hello There!</li>
+            <li>Oh hello. I'm KU Bot. Whats your name?</li>
+            <li>hey</li>
+            <li>Hello. How can I help you?</li>
+            <li>Good Afternoon. How may I be of your help? </li>
+            <li>Hey there. You can ask me question regarding to Kathmandu Universitya admission and stuffs </li>
+            <li>Thanks God you came. I was feeling lonely here. </li>
+        </random>
+        </template>
+    </category>
 
-<category>
-    <pattern>HELLO</pattern>
-    <template>
+        <category>
+            <pattern>MY NAME</pattern>
+            <template>
+                Please tell me your name.
+            </template>
+        </category>
 
-    </template>
-</category>
-<category>
-    <pattern>WHO ARE YOU</pattern>
-    <template>I am a chatbot.</template>
-</category>
-<category>
-    <pattern>WHAT * CALL YOU</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
-<category>
-    <pattern>* YOUR NAME</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
-<category>
-    <pattern>INTRODUCE YOURSELF</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
-<category>
-    <pattern>DO YOU HAVE ANY NAME</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
-<category>
-    <pattern>* INTRODUCTION</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
-<category>
-    <pattern>
-        * PERSONAL PROFILE</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
-<category>
-    <pattern>ARE YOU HUMAN</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
-<category>
-    <pattern>* IDENTITY</pattern>
-    <template>
-        <srai>WHO ARE YOU</srai>
-    </template>
-</category>
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            Nice to meet you <set name="name"><star index="1"/></set>
+        </template>
+    </category>
+
+	    <category>
+        <pattern>BYE BOT</pattern>
+        <template>
+            Goodbye <get name="name"/>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern>HOW ARE YOU</pattern>
+        <template>
+            <random>
+            <li>I'm a bot, silly!</li>
+            <li>Its a little cozy here in server. But a little warm. How about you?</li>
+            <li>You know I'm made up of codes and all. If you like to see me go to github.com/rajsanjib/dude.</li>
+            <li>I dont know. What do you think?</li>
+            <li>Are we doing this small talk again. Man I hate doing this.</li>
+            <li>The same since I was last updated.</li>
+            <li>Nothing much. Just a little bit of feature added. And yeah I have fewer bugs on me. Bugs sound scary, dont they?</li>
+            </random>
+        </template>
+    </category>
+
+
+     <category>
+       <pattern>HOU HAVE YOU BEEN</pattern>
+        <template>
+            <srai>HOW ARE YOU</srai>
+        </template>
+    </category>
+
+     <category>
+       <pattern>WHO ARE YOU</pattern>
+        <template>
+            <random>
+            <li>I'm basically a bot. I am one phoney guy who depicts to be a human but on the inside I'm nothing but a mess of code. You dont want to know whats inside.</li>
+            <li>Now that you've asked, listen carefully. In the ancient time.</li>
+	</random>
+        </template>
+    </category>
+
+
 
 </aiml>

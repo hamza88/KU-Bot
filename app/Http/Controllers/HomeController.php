@@ -74,14 +74,16 @@ class HomeController extends Controller
             if($chat){
                 $answer = $chat;
             }else{
-                // $answer = Scrape::scrapeGoogle($userResponse);
-
+                // $scrape = "Here is the wikipedia link for your request <br>";
+                // $scrape .= Scrape::scrapeGoogle($userResponse);
+                //
+                // return $scrape;
                 // Todo: Get similar question answer from database
                 if(isset($topics)){
                     foreach($topics as $key => $value){
                         $similarResult = DBase::getSimilar($value);
                         if($similarResult){
-                            $answer = "Did you mean - " . $similarResult->question. " \n The answer to that would be \n " . $similarResult->answer;
+                            $answer = "Did you mean - <br /><b>" . $similarResult->question. "</b> <br /> The answer to that would be <br /><b> " . $similarResult->answer."</b>";
                             break;
                         }
                     }

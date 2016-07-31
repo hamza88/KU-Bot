@@ -13,13 +13,15 @@
     </header>
     <div id="wrapper">
         <div class="pure-g container">
-            <div class="pure-u-1 chat-history">
-                <div class="trending message">
-                    <h3>Here are the trending topics right now!</h3>
+            <div class="pure-u-1">
+                <ol class="trending chat-history__messages">
+                    <li class="message-box message-box--recieved">
+                    <p class="message">
+                        <b>Here are the trending topics right now!</b><br/>
                     <?php foreach($trending as $topic): ?>
-                    <li class="message-box message-box--recieved"><?php echo $topic->topic; ?></li>
-                <?php endforeach; ?>
-                </div>
+                    <?php echo $topic->topic . "<br />"; ?>
+                <?php endforeach; ?></p>
+            </ol>
                 <chat-history>
 
                 </chat-history>
