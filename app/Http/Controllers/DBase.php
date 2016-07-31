@@ -15,10 +15,10 @@ class DBase extends Controller
     /**
      * @param $question
      */
-    public function insertQuestion($question){
+    public static function insertQuestion($question){
         $exists = DB::select('SELECT question from questions where question = ?',[$question]);
         if(!$exists){
-            DB::insert('insert into questions (question) VALUES ( ?)',[$question]);
+            DB::insert('insert into questions (question) VALUE (?)',[$question]);
         } else {
             DB::update('UPDATE questions SET count = count + 1 WHERE question = ?',[$question]);
         }
@@ -41,10 +41,12 @@ class DBase extends Controller
             WHERE MATCH(question) AGAINST(?)',
             [$question, $question]
         );
-
-        foreach ($result as $value) {
-            return ($value->question);
+        if($result){
+            foreach ($result as $value) {
+                return ($value);
+            }
         }
+        return false;
     }
 
     public static function insertTopic($topic){

@@ -13,11 +13,18 @@ use DB;
 class HomeController extends Controller
 {
 
-    public $errorMessages = array(
+    public static $errorMessages = array(
         "I'm really sorry about that but I am not able to anwer that question. Please try asking something else",
         "Oh Snap! My circuits broken. Apologies by devs. :)",
         "Here is a suggestion for you. Ask something else.",
-        "404 error Answer not found!"
+        "404 error Answer not found!",
+        "OK you've got me. I admit it I am not human",
+        "There are so many mystries in this world I cannot unravel",
+        "You should try asking a real human that question",
+        "I'll tell my bot master to teach me the answer to that question",
+        "Shall we move on to other questions",
+        "What if I say I dont want to answer your question. To be true I dont know the answer.",
+        "My knowledge base is not adequate to answer your question"
     );
 
     public static $spamErrMsg = array(
@@ -53,13 +60,16 @@ class HomeController extends Controller
             }
         }
 
+
+
         DBase::insertQuestion($userResponse);
+
 
         $spamWord = NLP::spamCheck($userResponse);
         if($spamWord){
             DBase::insertSpamWord($spamWord);
             return self::$spamErrMsg[rand(0, sizeof(self::$spamErrMsg))];
-        }else
+        }else{
             $chat = Chat::ask($userResponse);
             if($chat){
                 $answer = $chat;
@@ -67,13 +77,24 @@ class HomeController extends Controller
                 // $answer = Scrape::scrapeGoogle($userResponse);
 
                 // Todo: Get similar question answer from database
-                $similarResult = DBase::getSimilar($userResponse);
-                $answer = "Did you mean - ". $similarResult;
+                if(isset($topics)){
+                    foreach($topics as $key => $value){
+                        $similarResult = DBase::getSimilar($value);
+                        if($similarResult){
+                            $answer = "Did you mean - " . $similarResult->question. " \n The answer to that would be \n " . $similarResult->answer;
+                            break;
+                        }
+                    }
+                }
             }
 
             // Insert question and answer pair to db
-            if($answer && !(exists($similarResult))){
+            if(isset($answer) && !isset($similarResult)){
                 DBase::insertQA($userResponse, $answer);
+            }
+
+            if(!isset($answer)){
+                return self::$errorMessages[rand(0, sizeof(self::$errorMessages))];
             }
 
             return $answer;

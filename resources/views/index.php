@@ -14,10 +14,10 @@
     <div id="wrapper">
         <div class="pure-g container">
             <div class="pure-u-1 chat-history">
-                <div class="trending">
+                <div class="trending message">
                     <h3>Here are the trending topics right now!</h3>
                     <?php foreach($trending as $topic): ?>
-                    <li><?php echo $topic->topic; ?></li>
+                    <li class="message-box message-box--recieved"><?php echo $topic->topic; ?></li>
                 <?php endforeach; ?>
                 </div>
                 <chat-history>
