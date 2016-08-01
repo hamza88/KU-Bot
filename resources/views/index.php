@@ -9,18 +9,19 @@
 </head>
 <body>
     <header class="header pure-menu pure-menu-horizontal">
-        <a href="#" class="pure-menu-heading pure-menu-link">Dude</a>
+        <a href="#" class="pure-menu-heading pure-menu-link">KU Bot</a>
     </header>
     <div id="wrapper">
         <div class="pure-g container">
-            <div class="pure-u-1">
-                <ol class="trending chat-history__messages">
+            <div style="overflow-y: scroll; height: 90%;" class="pure-u-1">
+                    <ol class="trending chat-history__messages">
                     <li class="message-box message-box--recieved">
                     <p class="message">
                         <b>Here are the trending topics right now!</b><br/>
                     <?php foreach($trending as $topic): ?>
                     <?php echo $topic->topic . "<br />"; ?>
                 <?php endforeach; ?></p>
+            </li>
             </ol>
                 <chat-history>
 

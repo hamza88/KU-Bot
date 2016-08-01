@@ -1,6 +1,6 @@
 <template>
     <form class="pure-form">
-        <input type="text" placeholder="what next?." v-model="question">
+        <input type="text" placeholder="Ask here" v-model="question">
         <button type="submit" class="pure-button pure-button-primary" @click.prevent="GetAnswer()">Send</button>
     </form>
 </template>
