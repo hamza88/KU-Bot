@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+
+    <category>
+        <pattern>DO YOU HAVE PARTTIME OR EVENING GRADUATE PROGRAM</pattern>
+        <template>No. We only offer Full Time programs.</template>
+    </category>
+    <category>
+        <pattern>* PARTTIME OR EVENING GRADUATE PROGRAM</pattern>
+        <template>
+            <srai>DO YOU HAVE PARTTIME OR EVENING GRADUATE PROGRAM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* PARTTIME GRADUATE PROGRAM</pattern>
+        <template>
+            <srai>DO YOU HAVE PARTTIME OR EVENING GRADUATE PROGRAM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* EVENING GRADUATE PROGRAM</pattern>
+        <template>
+            <srai>DO YOU HAVE PARTTIME OR EVENING GRADUATE PROGRAM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>CAN I APPLY TO MORE THAN ONE GRADUATE PROGRAM</pattern>
+        <template>Yes. You can apply to BE as well as BTech. Make sure you are eligible to both programs.</template>
+    </category>
+    <category>
+        <pattern>* MORE THAN ONE GRADUATE PROGRAM</pattern>
+        <template>Does
+            <star/>
+            means CAN I APPLY TO MORE THAN ONE GRADUATE PROGRAM</template>
+    </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>Does means CAN I APPLY TO MORE THAN ONE GRADUATE PROGRAM</that>
+
+        <template>maybe it may help you
+            <srai>CAN I APPLY TO MORE THAN ONE GRADUATE PROGRAM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>NO</pattern>
+        <that>CAN I APPLY TO MORE THAN ONE GRADUATE PROGRAM</that>
+        <template>
+            <![CDATA[
+                    Please login to the site – <a href="https://ku.edu.np">ku.edu.np </a>Just a simple reminder i am a simle bot. You'd better visit to this link further query
+                ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>CAN I DEFER MY APPLICATION</pattern>
+        <template>Yes, you can. But you will NOT be refunded.</template>
+    </category>
+    <category>
+        <pattern>* DEFER MY APPLICATION</pattern>
+        <template>
+            <srai>CAN I DEFER MY APPLICATION</srai>
+        </template>
+    </category>
+    <category>s
+        <pattern>IS ADMISSION FORM AVAILABLE ONLINE</pattern>
+        <template>
+            <![CDATA[
+                    Form is available <a href="http://ku.edu.np/cse/graduate/admission">here</a>. You have to download and print it. Please follow the link below to download the application form.
+                    ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>HOW CAN I GET ADMISSION FORM</pattern>
+        <template>
+            <srai>IS ADMISSION FORM AVAILABLE ONLINE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* GET ADMISSION FORM</pattern>
+        <template>
+            <srai>IS ADMISSION FORM AVAILABLE ONLINE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>CAN YOU WAIVE OR DEFER THE APPLICATION FEE</pattern>
+        <template>No. You mush pay application fee. Otherwise, your application will not be processed.</template>
+    </category>
+    <category>
+        <pattern>* WAIVE APPLICATION FEE</pattern>
+        <template>May be this may help you<srai>CAN YOU WAIVE OR DEFER THE APPLICATION FEE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            * DEFER APPLICATION FEE</pattern>
+        <template>May be this may help you<srai>CAN YOU WAIVE OR DEFER THE APPLICATION FEE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* PAY * APPLICATION FEE</pattern>
+        <template>
+            When you say how do i pay my applicationn fee, did you mean the details of it.
+        </template>
+    </category>
+    <category>
+        <pattern>* PAY * APPLICATION FEES</pattern>
+        <template>When you say how do i pay my applicationn fee, did you mean the details of it.</template>
+    </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>When you say how do i pay my applicationn fee, did you mean the details of it.</that>
+        <template>
+            You should desposit your fee in the Kathmandu University account in Nepal Investment Bank.
+        </template>
+    </category>
+    <category>
+        <pattern>HOW MUCH SHOULD I PAY FOR MY APPLICATION FEE</pattern>
+        <template>The appication fee is NRs. 1250</template>
+    </category>
+    <category>
+        <pattern>COULD YOU HELP ME WITH THE BANKING DETAILS</pattern>
+        <template>
+            <random>
+                <li>Well the deposit shoul be done in</li>
+                <li>Account Name : Kathmandu University</li>
+                <li>Bank Account Information: Nepal Investment Bank Ltd A/C No. : 00501030250009 Machhapuchchhre Bank Ltd A/C No. : 2022524044147028 Nabil Bank Ltd A/C No. : 0110010955102</li>
+            </random>
+        </template>
+    </category>
+    <category>
+        <pattern>WILL I BE NOTICED IF SOMETHING IS MISSING FROM MY APPLICATION</pattern>
+        <template>Yes. We will contact you. But we encourage to check every documents before you submit.</template>
+    </category>
+    <category>
+        <pattern>* IF SOMETHING IS MISSING FROM MY APPLICATION</pattern>
+        <template>
+            <srai>WILL I BE NOTICED IF SOMETHING IS MISSING FROM MY APPLICATION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WILL I BE SELECETED FOR THE INTERVIEW</pattern>
+        <template>Yes if you have met the admission requirements.</template>
+    </category>
+    <category>
+        <pattern>* I BE SELECETED FOR THE INTERVIEW</pattern>
+        <template>
+            <srai>WILL I BE SELECETED FOR THE INTERVIEW</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* SELECETED FOR THE INTERVIEW</pattern>
+        <template>when
+            <star/>
+            not selected for the interview</template>
+    </category>
+    <category>
+        <pattern>* SELECETED FOR THE INTERVIEW</pattern>
+        <template></template>
+    </category>
+    <category>
+        <pattern>WILL THERE BE WRITTEN EXAM THIS TIME</pattern>
+        <template>No. KUCAT AND Interview is the ultimate procedure.</template>
+    </category>
+    <category>
+        <pattern>HOW ABOUT WRITTEN EXAM</pattern>
+        <template>
+            <srai>WILL THERE BE WRITTEN EXAM THIS TIME</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* WRITTEN EXAM THIS TIME</pattern>
+        <template>
+            <srai>WILL THERE BE WRITTEN EXAM THIS TIME</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WILL I BE NOTIFIED ABOUT INTERVIEW LIST AND ADMISSION LIST</pattern>
+        <template>We publish the list of applicants in our website. We will also inform you via email.</template>
+    </category>
+    <category>
+        <pattern>WHAT SHOUL I DO TO GET NOTIFIED ABOUT INTERVIEW LIST AND ADMISSION LIST</pattern>
+        <template>
+            <srai>WILL I BE NOTIFIED ABOUT INTERVIEW LIST AND ADMISSION LIST</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* NOTIFIED ABOUT INTERVIEW LIST AND ADMISSION LIST</pattern>
+        <template>
+            <srai>WILL I BE NOTIFIED ABOUT INTERVIEW LIST AND ADMISSION LIST</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS THE COST OF EACH GRADUATE PROGRAM</pattern>
+        <template>NRs. 600000 (Around six lakhs)</template>
+    </category>
+    <category>
+        <pattern>COST OF EACH GRADUATE PROGRAM</pattern>
+        <template>
+            <srai>WHAT IS THE COST OF EACH GRADUATE PROGRAM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* COST OF EACH GRADUATE PROGRAM</pattern>
+        <template>
+            <srai>WHAT IS THE COST OF EACH GRADUATE PROGRAM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS THE AMOUNT THAT I HAVE TO PAY AT THE TIME OF ADMISSION</pattern>
+        <template>NRs. 1,13,000 (One lakh and thirteen Thousand)</template>
+    </category>
+    <category>
+        <pattern>* AMOUNT THAT I HAVE TO PAY AT THE TIME OF ADMISSION</pattern>
+        <template>
+            <srai>WHAT IS THE AMOUNT THAT I HAVE TO PAY AT THE TIME OF ADMISSION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>AMOUNT THAT I HAVE TO PAY *</pattern>
+        <template>
+            <srai>WHAT IS THE AMOUNT THAT I HAVE TO PAY AT THE TIME OF ADMISSION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>DOES DEPARTMENT ACCEPT TRANSFER CREDIT</pattern>
+        <template>No</template>
+    </category>
+    <category>
+        <pattern>* DEPARTMENT ACCEPT TRANSFER CREDIT</pattern>
+        <template>No.Department doesnot accept any transfer credit</template>
+    </category>
+    <category>
+        <pattern>* TRANSFER CREDIT</pattern>
+        <template>
+            <srai>DOES DEPARTMENT ACCEPT TRANSFER CREDIT</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>IS TRANSPORTATION SERVICE AVAILABLE TO GRADUATE STUDENTS</pattern>
+        <template>Yes</template>
+    </category>
+    <category>
+        <pattern>* TRANSPORTATION SERVICE AVAILABLE
+        </pattern>
+        <template>
+            <srai>IS TRANSPORTATION SERVICE AVAILABLE TO GRADUATE STUDENTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>TRANSPORTATION SERVICE
+        </pattern>
+        <template>
+            <srai>IS TRANSPORTATION SERVICE AVAILABLE TO GRADUATE STUDENTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            * VEHICLE SERVICE AVAILABLE
+        </pattern>
+        <template>
+            <srai>IS TRANSPORTATION SERVICE AVAILABLE TO GRADUATE STUDENTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>ARE THERE ANY BUSES AVAILABLE FOR GRADUATE STUDENT</pattern>
+        <template>
+            <srai>IS TRANSPORTATION SERVICE AVAILABLE TO GRADUATE STUDENTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>IS HOSTEL SERVICE AVAILABLE TO GRADUATE STUDENTS</pattern>
+        <template>Yes</template>
+    </category>
+    <category>
+        <pattern>* HOSTEL SERVICE AVAILABLE
+        </pattern>
+        <template>
+            <srai>IS HOSTEL SERVICE AVAILABLE TO GRADUATE STUDENT</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HOW DO I PAY MY REGULAR TUITION FEE</pattern>
+        <template>Departement provides you a fee structure page to every student. You have to deposit the amount as mentioed in fee structure – 3 or 4 times a year.</template>
+    </category>
+    <category>
+        <pattern>* PAY MY REGULAR TUITION FEE</pattern>
+        <template>
+            <srai>HOW DO I PAY MY REGULAR TUITION FEE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HOW DO I APPLY FOR TEACHING ASSISTANTSHIP</pattern>
+        <template>To apply for TAship, you first need to be our graduate student. Department will announce the vacancy for Teaching Assistant later. Every one of our graduate student is eligible to apply.</template>
+    </category>
+    <category>
+        <pattern>H* I APPLY FOR TEACHING ASSISTANTSHIP</pattern>
+        <template>
+            <srai>HOW DO I APPLY FOR TEACHING ASSISTANTSHIP</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS THE FORMULA FUNDING
+        </pattern>
+        <template>Formula Funding is the Full Scholarship provided by University Grants Commission (UGC). Only 10% of total student in each program will receive this scholarship.</template>
+    </category>
+    <category>
+        <pattern>* FORMULA FUNDING
+        </pattern>
+        <template>Formula Funding is the Full Scholarship provided by University Grants Commission (UGC). Only 10% of total student in each program will receive this scholarship.</template>
+    </category>
+    <category>
+        <pattern>
+            FORMULA FUNDING</pattern>
+        <template>
+            <srai>WHAT IS THE FORMULA FUNDING</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            * SCHOLARSHIP PROGRAM</pattern>
+        <template>
+            <srai>WHAT IS THE FORMULA FUNDING</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            HOW DO I APPLY FOR IT</pattern>
+        <that>WHAT IS THE FORMULA FUNDING</that>
+        <template>
+            Department will announce the Notice in October/November. Every student is eligible to apply for this scholarship.</template>
+    </category>
+    <category>
+
+        <pattern>* APPLY FOR IT</pattern>
+        <that>WHAT IS THE FORMULA FUNDING</that>
+        <template>Department will announce the Notice in October/November. Every student is eligible to apply for this scholarship.</template>
+    </category>
+    <category>
+        <pattern>WHOM CAN I CONTACT IF I HAVE SPECIFIC QUESTION</pattern>
+        <template>
+            If you have specific question that is not answered here, please contact CSE Department via email at cse@ku.edu.np</template>
+    </category>
+    <category>
+        <pattern>* CONTACT IF I HAVE SPECIFIC QUESTION</pattern>
+        <template>
+            <srai>WHOM CAN I CONTACT IF I HAVE SPECIFIC QUESTION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* DO IF I HAVE SPECIFIC QUESTION</pattern>
+        <template>
+            <srai>WHOM CAN I CONTACT IF I HAVE SPECIFIC QUESTION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* CONTACT IF I HAVE QUERY</pattern>
+        <template>
+            <srai>WHOM CAN I CONTACT IF I HAVE SPECIFIC QUESTION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* ANSWERS TO MY QUERY</pattern>
+        <template>
+            <srai>WHOM CAN I CONTACT IF I HAVE SPECIFIC QUESTION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHERE SHOULD I SUBMIT THE APPLICATION FORM</pattern>
+        <template>Entrance admission card is submitted after verification of original certificates from Kathmandu University, Dhulikhel from July 8 to July 26, 2016 ( 10:30 AM to 2:30 PM)
+        </template>
+    </category>
+    <category>
+        <pattern>* SUBMIT THE APPLICATION FORM</pattern>
+        <template>
+            <srai>WHERE SHOULD I SUBMIT THE APPLICATION FORM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* DROP THE APPLICATION FORM</pattern>
+        <template>
+            <srai>WHERE SHOULD I SUBMIT THE APPLICATION FORM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT NEEDS TO BE DONE AFTER SUBMITTING THE APPLICATION FORM</pattern>
+        <template>
+            1.Check if you are on the list of applicants selected for KUCAT. 2.Collect admit card for KUCAT. 3.Sit for the KUCAT written test. 4.After taking KUCAT, check if you are on the list of eligible applicants. 5.Apply in KU or its affiliated colleges.
+        </template>
+    </category>
+    <category>
+        <pattern>* AFTER SUBMITTING THE APPLICATION FORM</pattern>
+        <template>
+            <srai>WHAT NEEDS TO BE DONE AFTER SUBMITTING THE APPLICATION FORM</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>FROM WHERE DO I COLLECT THE ADMIT CARD</pattern>
+        <template>
+            Entrance admission card is issued after verification of original certificates from Kathmandu University, Dhulikhel from July 8 to July 26, 2016 ( 10:30 AM to 2:30 PM)
+        </template>
+    </category>
+    <category>
+        <pattern>
+            * I COLLECT THE ADMIT CARD</pattern>
+        <template>
+            <srai>FROM WHERE DO I COLLECT THE ADMIT CARD</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN WILL THE RESULT BE PUBLISHED
+        </pattern>
+        <template>
+            <![CDATA[
+                    Please visit this site – <a href="https://google.com">https://google.com</a> and refer to admission section.
+                ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>* RESULT PUBLISHED
+        </pattern>
+        <template>
+            <srai>WHEN WILL THE RESULT BE PUBLISHED</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HOW LONG THE TEST SCORE VALID</pattern>
+        <template>The test score will be valid for the current year only.</template>
+    </category>
+    <category>
+        <pattern>
+            * TEST SCORE VALID</pattern>
+        <template>
+            <srai>HOW LONG THE TEST SCORE VALID</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            VALIDITY OF TEST SCORES</pattern>
+        <template>
+            <srai>HOW LONG THE TEST SCORE VALID</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>ARE CALCULATORS ALLOWED</pattern>
+        <template>Yes they are not allowed in the exam.</template>
+    </category>
+    <category>
+        <pattern>ARE MOBILES ALLOWED</pattern>
+        <template>No they are not allowed</template>
+    </category>
+    <category>
+        <pattern>ARE * ALLOWED</pattern>
+        <template>Which category
+            <star/>
+            falls upon</template>
+    </category>
+    <category>
+        <pattern>FOOD ITEMS</pattern>
+        <template>No they are not allowed</template>
+    </category>
+    <category>
+        <pattern>MOBILES</pattern>
+        <template>
+            <srai>ARE MOBILES ALLOWED</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>CALCULATOR</pattern>
+        <template>
+            <srai>ARE CALCULATORS ALLOWED</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>GUN</pattern>
+        <template>You may have to go to prision</template>
+    </category>
+</aiml>

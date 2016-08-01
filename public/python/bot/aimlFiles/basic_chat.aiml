@@ -16,6 +16,41 @@
         </template>
     </category>
 
+    <category>
+        <pattern>CAN DO</pattern>
+        <template>
+            <![CDATA[
+            I can do a few things like <br/>
+            1. Provide you download links to important documents from KU website </br>
+            2. Tell you the location of each blocks of KU <br />
+            3. Give basic information on KU <br />
+            4. Provide dates for important events <br />
+            5. Give information on Entrance, Admission and Result <br />
+]]>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* YOU DO</pattern>
+        <template>
+            <srai>CAN DO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* YOU CAN DO</pattern>
+        <template>
+            <srai>CAN DO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI *</pattern>
+        <template>
+            <srai>HELLO</srai>
+        </template>
+    </category>
+
         <category>
             <pattern>MY NAME</pattern>
             <template>
@@ -58,6 +93,13 @@
        <pattern>HOU HAVE YOU BEEN</pattern>
         <template>
             <srai>HOW ARE YOU</srai>
+        </template>
+    </category>
+    
+         <category>
+       <pattern>* YOUR NAME</pattern>
+        <template>
+        	My name is KU Bot. Whats yours?
         </template>
     </category>
 

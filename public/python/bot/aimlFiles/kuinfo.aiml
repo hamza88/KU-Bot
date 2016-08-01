@@ -1,0 +1,221 @@
+<aiml version="1.0">
+
+<category>
+  <pattern>KU ESTABLISHED</pattern>
+  <template>
+    It was established in 1991
+    <set name="it">KU</set>
+  </template>
+</category>
+
+
+<category>
+  <pattern>WHEN * KU ESTABLISHED *</pattern>
+  <template>
+    <srai>KU ESTABLISHED</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>WHEN * KU ESTABLISHED</pattern>
+  <template>
+    <srai>KU ESTABLISHED</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>WHAT YEAR * KU ESTABLISHED</pattern>
+  <template>
+    <srai>KU ESTABLISHED</srai>
+  </template>
+</category>
+
+
+<category>
+  <pattern>WHERE * KU</pattern>
+  <template>
+    KU is located in 28 Kilo, Dhulikhel, Kavre
+  </template>
+</category>
+
+<category>
+  <pattern>WHERE * KATHMANDU UNIVERSITY *</pattern>
+  <template>
+    KU is located in 28 Kilo, Dhulikhel, Kavre
+  </template>
+</category>
+
+<category>
+  <pattern>DIRECTION</pattern>
+  <template>
+    Buses for Dhulikhel leave from Purano Buspark every 10-15 mins.
+    You can ask for the bus to stop you at 28 kilo. KU Campus is located 800m right from 28 kilo
+  </template>
+</category>
+
+<category>
+  <pattern>* DIRECTION * KU</pattern>
+  <template>
+	<srai>DIRECTION</srai>
+  </template>
+</category>
+
+<category>
+  <pattern>* DIRECTION _ KU *</pattern>
+  <template>
+  <srai> DIRECTION </srai>
+  </template>
+</category>
+
+
+<category>
+  <pattern>* REACH KU *</pattern>
+  <template> <srai>DIRECTION</srai> </template>
+</category>
+
+<category>
+  <pattern>* KU ADMISSION FORM *</pattern>
+  <template>The forms for admission will be available from August.</template>
+</category>
+
+<category>
+  <pattern>* LAST DATE * ADMISSION FORM SUBMISSION</pattern>
+  <template> The last date for form submission is September 1.</template>
+</category>
+
+<category>
+  <pattern>* KU ENTRANCE EXAM </pattern>
+  <template> The Kathmandu University entrance exams will be held from August 25.</template>
+</category>
+
+<category>
+  <pattern>WHAT IS THE FORM FEES OF KU</pattern>
+  <template> The form fees for KU is $..</template>
+</category>
+
+<category>
+  <pattern>SESSION START</pattern>
+  <template> The sessions at KU start in the fall August and for Computer science there is also a February intake.</template>
+</category>
+
+
+<category>
+  <pattern>* SESSION START AT KU</pattern>
+  <template> <srai> SESSION START</srai></template>
+</category>
+
+<category>
+  <pattern>* NEW CLASSES START *</pattern>
+  <template> <srai>SESSION START AT KU</srai></template>
+</category>
+
+<category>
+  <pattern>WHAT ARE THE COURSES OFFERED BY KU</pattern>
+  <template> The different courses offered by KU are Mechanical, Civl, Computer and Electrical Engineering through the School of Engineering
+  and Biotechnology, pharmacy, Enviroment science and Human Biology from the School of Science. </template>
+</category>
+
+<category>
+  <pattern>* DEPARTMENTS IN KU</pattern>
+  <template><srai>WHAT ARE THE COURSES OFFERED BY KU</srai> </template>
+</category>
+
+<category>
+  <pattern>QUALIFICATION</pattern>
+  <template> High school or an equivalent cerficate level course for Undergraduate studies.</template>
+</category>
+
+
+<category>
+  <pattern>* MINIMUM QUALIFICATION *</pattern>
+  <template><srai>QUALIFICATION</srai></template>
+</category>
+
+
+<category>
+  <pattern>* MINIMUM CRITERIA *</pattern>
+  <template><srai>QUALIFICATION</srai></template>
+</category>
+
+<category>
+  <pattern>* CRITERIA *</pattern>
+  <template><srai>QUALIFICATION</srai></template>
+</category>
+
+
+<category>
+  <pattern>SHOULD I HAVE STUDIED BIOLOGY IN 12 TO GET ADMISSION IN SCHOOL OF SCIENCE</pattern>
+  <template>Details differ from program to program but mostly a biology course in +2 is necessary.</template>
+</category>
+
+<category>
+  <pattern>WHO IS VICE CHANCELLOR OF KU</pattern>
+  <template>Mr. Ram Kantha Makaju is the Vice Chancellor of KU</template>
+</category>
+
+<category>
+  <pattern>WHEN IS THE LAST DATE FOR INSTALLEMENT FEES SUBMISSION</pattern>
+  <template> The last date for the installment submission is April 15.</template>
+</category>
+
+<category>
+  <pattern>WHEN IS THE LAST DATE FOR COURSE REGISTRATION</pattern>
+  <template>The last date for course registration 2016 for School of science is April 10 and for School of engineering is April 25.</template>
+</category>
+
+<category>
+  <pattern>WHEN IS THE LAST DATE FOR EXAM FORM SUBMISSOIN</pattern>
+  <template> The last date for form submission is August 4.</template>
+</category>
+
+<category>
+  <pattern>WHEN IS THE CONVOCATOIN CEREMONY </pattern>
+  <template>The KU convocation and gradutation ceremony will be held on November 10. </template>
+</category>
+
+<category>
+  <pattern>WHEN IS THE LAST DATE FOR READMISSION FORM SUBMISSION </pattern>
+  <template>The last date for readmission form submission is April 17. </template>
+</category>
+
+<category>
+  <pattern>WHEN IS THE KU SPORTS MEET </pattern>
+  <template>The KU Sports meet is going to be held on May 10. </template>
+</category>
+
+<category>
+  <pattern>WHAT IS THE TOTAL COST OF UNDERGRADUATE PROGRAM AT KU </pattern>
+  <template>The total tution fees for undergraduate is around $6000. </template>
+</category>
+
+<category>
+  <pattern>IS THERE ONLINE REGISTRATION FOR KU ENTRANCE </pattern>
+  <template>The online registration form for KU can be found at www.ku.edu.np/exam </template>
+</category>
+
+<category>
+  <pattern>HOW BIG IS KU </pattern>
+  <template>The main campus of KU sits on a land $$ acres. </template>
+</category>
+
+<category>
+  <pattern>* AREA OF KU </pattern>
+  <template><srai>HOW BIG IS KU</srai></template>
+</category>
+
+
+<category>
+  <pattern>CLIMATE OF KU</pattern>
+  <template>The climate in KU is warm but still cool summers and cold winters. All in ALL its great!</template>
+</category>
+
+<category>
+  <pattern>WHAT IS IT LIKE TO LIVE IN KU</pattern>
+  <template><srai>CLIMATE OF KU</srai></template>
+</category>
+
+<category>
+  <pattern>* CONTACT *</pattern>
+  <template> Phone: 39483948 and website: www.ku.edu.np </template>
+</category>
+</aiml>

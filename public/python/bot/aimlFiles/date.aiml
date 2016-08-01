@@ -1,0 +1,461 @@
+<?xml version = "1.0" encoding="ISO-8859-1"?>
+<aiml>
+
+    <!-- Dates -->
+
+    <category>
+        <pattern>KUCAT EXAM FIRST SHIFT</pattern>
+        <template>
+            The exam date of KUCAT-2016 is on 11 AM August 15th, Sunday.
+        </template>
+    </category>
+
+    <category>
+        <pattern>KUCAT EXAM SECOND SHIFT</pattern>
+        <template>
+            The exam date of KUCAT-2016 is on 2 AM August 15th, Sunday.
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SECOND SHIFT</pattern>
+        <template>
+            <srai> KUCAT EXAM SECOND SHIFT</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* FIRST SHIFT</pattern>
+        <template>
+            <srai> KUCAT EXAM FIRST SHIFT</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>_ TIME FOR * SHIFT *</pattern>
+        <template>
+            <srai><star index="2"/>
+                SHIFT</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>KUCAT EXAM DATE</pattern>
+        <template>
+            The exam date of KUCAT-2016 is from August 15th, Sunday to August 25, Wednesday.
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ KUCAT EXAM * DATE</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>_ ENTRANCE EXAM * DATE</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>KUCAT EXAM * DATE</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>ENTRANCE EXAM * DATE</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>_ ENTRANCE EXAM DATE *</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ KUCAT EXAM DATE *</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ DATE OF *</pattern>
+        <template>
+            <srai><star index="2"/>
+                DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DATE OF * 2016</pattern>
+        <template>
+            <srai><star index="1"/>
+                DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DATE OF * HAPPENING</pattern>
+        <template>
+            <srai><star index="1"/>
+                DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN _ THE * BE HELD</pattern>
+        <template>
+            <srai><star index="1"/>
+                DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN WILL * BE HELD</pattern>
+        <template>
+            <srai><star index="1"/>
+                DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN IS * BEING HELD</pattern>
+        <template>
+            <srai><star index="1"/>
+                DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN IS _ KUCAT EXAM * HAPPENING</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN IS _ ENTRANCE EXAM * HAPPENING</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN IS THE * HAPPENING</pattern>
+        <template>
+            <srai><star index="1"/>
+                DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN IS KUCAT EXAM</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN IS ENTRANCE EXAM</pattern>
+        <template>
+            <srai>KUCAT EXAM DATE</srai>
+        </template>
+    </category>
+
+
+    <!-- Admission Dates -->
+    <category>
+        <pattern>ADMISSION DATE</pattern>
+        <template>
+            The date for admission is from August 27th, Friday to September 1, Wednesday.
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN * ADMISSION</pattern>
+        <template>
+            <srai>ADMISSION DATE</srai>
+        </template>
+    </category>
+
+    <!-- Application Deadline -->
+    <category>
+        <pattern>APPLICATION DEADLINE</pattern>
+        <template>
+            The deadline for application submission is from August 27th, Friday to September 1, Wednesday.
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN _ APPLICATION * DEADLINE</pattern>
+        <template>
+            <srai>APPLICATION DEADLINE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN _ APPLICATION DEADLINE</pattern>
+        <template>
+            <srai>APPLICATION DEADLINE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN _ DEADLINE * APPLICATION</pattern>
+        <template>
+            <srai>APPLICATION DEADLINE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>_ DEADLINE * APPLICATION</pattern>
+        <template>
+            <srai>APPLICATION DEADLINE</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>_ DEADLINE * APPLICATION SUBMISSION</pattern>
+        <template>
+            <srai>APPLICATION DEADLINE</srai>
+        </template>
+    </category>
+
+    <!-- KUCAT RESULT PUBLISHING DATE -->
+    <category>
+        <pattern>KUCAT RESULT DATE</pattern>
+        <template>
+            <![CDATA[
+                The result will be published on 15th September. Check this <a href="www.ku.edu.np/result">site</a> for updates.
+            ]]>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHEN * ENTRANCE RESULT *</pattern>
+            <template>
+                <srai>
+                    KUCAT RESULT DATE
+            </srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN * KUCAT RESULT *</pattern>
+            <template>
+                <srai>
+                    KUCAT RESULT DATE
+            </srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT * KUCAT RESULT *</pattern>
+            <template>
+                <srai>
+                    KUCAT RESULT DATE
+            </srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN * ENTRANCE RESULT *</pattern>
+            <template>
+                <srai>
+                    KUCAT RESULT DATE
+            </srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT * ENTRANCE RESULT *</pattern>
+            <template>
+                <srai>
+                    KUCAT RESULT DATE
+            </srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHEN * KUCAT RESULT *</pattern>
+            <template>
+                <srai>
+                    KUCAT RESULT DATE
+            </srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT * KUCAT RESULT *</pattern>
+            <template>
+                <srai>
+                    KUCAT RESULT DATE
+            </srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT YEAR IS THIS</pattern>
+        <template><date format="%Y"/>.</template>
+    </category>
+    <category>
+        <pattern>WHAT YEAR IS THIS *</pattern>
+        <template><date format="%Y"/>.</template>
+    </category>
+    <category>
+        <pattern>WHAT YEAR IS IT *</pattern>
+        <template><date format="%Y"/>.</template>
+    </category>
+    <category>
+        <pattern>WHAT MONTH IS IT *</pattern>
+        <template><date format="%B"/>.</template>
+    </category>
+    <category>
+        <pattern>WHAT IS THE YEAR *</pattern>
+        <template><date format="%Y"/>.</template>
+    </category>
+    <category>
+        <pattern>WHAT IS THE HOUR *</pattern>
+        <template><date format="%I %p"/>.</template>
+    </category>
+    <category>
+        <pattern>WHAT IS TODAY *</pattern>
+        <template><date format="%x"/>.</template>
+    </category>
+    <category>
+        <pattern>WHAT DAY IS IT *</pattern>
+        <template><date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY SUNDAY</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY SUNDAY *</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY FRIDAY</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY FRIDAY *</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY TUESDAY</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY TUESDAY *</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY THURSDAY</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY THURSDAY *</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY SATURDAY</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY SATURDAY *</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY WEDNESDAY</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY WEDNESDAY *</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY MONDAY</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS TODAY MONDAY *</pattern>
+        <template>Today is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT MONDAY</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT MONDAY *</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT WEDNESDAY</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT WEDNESDAY *</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT FRIDAY</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT FRIDAY *</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT SATURDAY</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT SATURDAY *</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT THURSDAY</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT THURSDAY *</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT SUNDAY</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT SUNDAY *</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT TUESDAY</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+    <category>
+        <pattern>IS IT TUESDAY *</pattern>
+        <template>It is
+            <date format="%A"/>.</template>
+    </category>
+</aiml>

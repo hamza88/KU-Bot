@@ -1,0 +1,117 @@
+<?xml version = "1.0" encoding="ISO-8859-1"?>
+<aiml>
+
+    <!-- subjects -->
+    <category>
+        <pattern>ENGINEERING COURSES LIST</pattern>
+        <template>
+
+            <![CDATA[
+            BE (Civil engineering) <br />
+            BE (Computer engineering) <br />
+            BE (Mechanical engineering) <br />
+            BE in Electrical and Electronics Engineering (Power and Control) <br />
+            BE in Electrical and Electronics Engineering (Communication) <br />
+            BE (Geomatics engineering) <br />
+            BE in Chemical Engineering <br />
+            B Arch. in Architecture(To be started soon....) <br />
+            ]]>
+
+        </template>
+    </category>
+
+    <category>
+        <pattern>SCIENCE COURSES LIST</pattern>
+        <template>
+            <![CDATA[
+            BSc in Applied Physics <br />
+           Bachelor of Technology in Environmental Engineering <br />
+           Bachelor of Technology in Biotechnology <br />
+           Bachelor of Pharmacy <br />
+           B.Sc. in Environmental Science <br />
+           B.Sc. In Human Biology <br />
+           ]]>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern>ENGINEERING DEPARTMENTS LIST</pattern>
+        <template>
+            <![CDATA[
+            FOLLWING ARE THE DEPRATMENTS OF KU School of Engineering <br />
+            Department of Computer Science and Engineering<br/>
+            Department of Electronics and Electrical and Engineering<br/>
+            Department of Mechanical Engineering<br/>
+            Department of Civil and Geomatics Engineering<br/>
+            Department of Computer Science and Engineering<br/>
+            Department of Chemical Science and Engineering <br />
+            ]]>
+        </template>
+    </category>
+    <category>
+        <pattern>SCIENCE DEPARTMENTS LIST</pattern>
+        <template>
+            <![CDATA[
+            FOLLWING ARE THE DEPRATMENTS OF Kathmandu University School of Science <br />
+            Department of Biotechnology<br/>
+            Department of Environmental Science and Engineering<br/>
+            Department of Natural Sciences<br/>
+            Department of Pharmacy<br/>
+            ]]>
+        </template>
+    </category>
+
+
+ 	<category>
+	<pattern> * UNDERGRADUATE PROGRAMS * </pattern>
+        <template>
+            Different courses are provided by following departments. <br />
+	    <srai> ENGINEERING DEPARTMENTS LIST</srai>
+        <srai> SCIENCE DEPARTMENTS LIST </srai>
+	</template>
+    </category>
+
+    <category>
+	<pattern> * UNDERGRADUATE PROGRAMS * SCIENCE </pattern>
+        <template>
+            Different departments in Engineering School offer different courses. <br />
+        <srai> SCIENCE DEPARTMENTS LIST </srai>
+	</template>
+    </category>
+
+
+        <category>
+    	<pattern> * UNDERGRADUATE PROGRAMS * ENGINEERING </pattern>
+            <template>
+                Different departments in Engineering School offer different couses. <br />
+            <srai> ENGINEERING DEPARTMENTS LIST </srai>
+    	</template>
+        </category>
+
+        <category>
+    	<pattern> * COURSES * ENGINEERING </pattern>
+            <template>
+            <srai> ENGINEERING COURSES LIST </srai>
+    	</template>
+        </category>
+        <category>
+    	<pattern> * ENGINNERING COURSES * </pattern>
+            <template>
+            <srai> ENGINEERING COURSES LIST </srai>
+    	</template>
+        </category>
+        <category>
+    	<pattern> * SCIENCE COURSES * </pattern>
+            <template>
+            <srai> SCIENCE COURSES LIST </srai>
+    	</template>
+        </category>
+        <category>
+    	<pattern> * COURSES * SCIENCE </pattern>
+            <template>
+            <srai> SCIENCE COURSES LIST </srai>
+    	</template>
+        </category>
+
+</aiml>

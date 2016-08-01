@@ -1,0 +1,250 @@
+<?xml version = "1.0" encoding="ISO-8859-1"?>
+<aiml>
+
+    <!-- Location -->
+
+    <category>
+        <pattern> WHERE IS KU LOCATED</pattern>
+        <template>
+            ku is located in Dhulikhel, Kavrepalanchok District, about 30 km east of Kathmandu.
+        </template>
+    </category>
+    <category>
+	<pattern> * LOCATION OF KU </pattern>
+        <template>
+	    <srai> where is ku located </srai>
+	</template>
+     </category>
+ 	<category>
+	<pattern> * KU LOCATED</pattern>
+        <template>
+	    <srai> where is ku located </srai>
+	</template>
+     </category>
+
+  <!-- department location -->
+
+    <category>
+	<pattern>ADMIN BUILDING LOCATION</pattern>
+	<template>
+	    It is located in block 1
+	</template>
+     </category>
+
+
+     <category>
+     <pattern> * ADMIN * LOCATED</pattern>
+        <template>
+        <srai>ADMIN BUILDING LOCATION</srai>
+     </template>
+     </category>
+
+	<category>
+	<pattern> * LOCATION OF ADMIN * </pattern>
+        <template>
+	    <srai>ADMIN BUILDING LOCATION</srai>
+	</template>
+     </category>
+
+     <category>
+	<pattern> DOCSE LOCATION </pattern>
+	<template>
+	    It is located in block 14
+	</template>
+     </category>
+
+     <category>
+     <pattern> * DOCSE * LOCATED</pattern>
+        <template>
+        <srai>DOCSE LOCATION</srai>
+     </template>
+     </category>
+
+     <category>
+     <pattern> * LOCATION OF DOSCE * </pattern>
+        <template>
+        <srai>DOCSE LOCATION</srai>
+     </template>
+     </category>
+
+     <category>
+	<pattern> CIVIL LOCATION </pattern>
+	<template>
+	    It is located in block 11
+	</template>
+     </category>
+
+
+     <category>
+     <pattern> * CIVIL * LOCATED</pattern>
+        <template>
+        <srai>CIVIL LOCATION</srai>
+     </template>
+     </category>
+
+     <category>
+     <pattern> * LOCATION OF CIVIL * </pattern>
+        <template>
+        <srai>CIVIL LOCATION</srai>
+     </template>
+     </category>
+
+     <category>
+     <pattern> ENVIRONMENTAL LOCATION </pattern>
+     <template>
+        It is located in block 5 and 6
+     </template>
+     </category>
+
+     <category>
+     <pattern> * ENVIRONMENTAL * LOCATED</pattern>
+        <template>
+        <srai>ENVIRONMENTAL LOCATION</srai>
+     </template>
+     </category>
+
+     <category>
+     <pattern> * LOCATION OF ENVIRONMENTAL * </pattern>
+        <template>
+        <srai>ENVIRONMENTAL LOCATION</srai>
+     </template>
+     </category>
+
+     <category>
+	<pattern> MECHANICAL LOCATION </pattern>
+	<template>
+	    It is located in block 8
+	</template>
+     </category>
+
+     <category>
+     <pattern> * MECHANICAL * LOCATED</pattern>
+        <template>
+        <srai>MECHANICAL LOCATION</srai>
+     </template>
+     </category>
+
+     <category>
+     <pattern> * LOCATION OF MECHANICAL * </pattern>
+        <template>
+        <srai>MECHANICAL LOCATION</srai>
+     </template>
+     </category>
+
+
+<!-- forms loaction -->
+
+    <category>
+        <pattern> WHERE * GET * ENTRANCE FORM * </pattern>
+   <template>
+	      forms are available on admin block 1.
+        </template>
+    </category>
+
+ <!-- exam hall location -->
+
+  <category>
+<pattern>WHERE * EXAM *</pattern>
+<template>
+ KUCAT 2016 entrance exam will be conducted in ku central building.. seat plan detail is available in our website ku.edu.np/exam section/entrance/seatplans
+</template>
+</category>
+
+
+
+    <category>
+        <pattern> * SEAT PLAN * </pattern>
+        <template>
+             <srai>WHERE * EXAM *</srai>
+        </template>
+    </category>
+    <category>
+	<pattern>* entrance exam location </pattern>
+        <template>
+	    <srai> where will be my  KUCAT 2016 entrance examination </srai>
+	</template>
+     </category>
+ 	<category>
+	<pattern> * KUCAT 2016 exam hall  </pattern>
+        <template>
+	    <srai> where will be my  KUCAT 2016 entrance examination </srai>
+	</template>
+     </category>
+
+     <category>
+     	<pattern> WHERE IS LIBRARY * </pattern>
+     	<template>
+     	    It is located in block 3
+     	</template>
+          </category>
+          <category>
+     	<pattern> WHERE IS LIBRARY * </pattern>
+     	<template>
+     	    It is located in block 3
+     	</template>
+          </category>
+     	<category>
+     	<pattern> WHERE IS CANTEEN * </pattern>
+     	<template>
+     	    Ku has two canteens.One of them is located in Block 13 and other in Block 3
+     	</template>
+          </category>
+          <category>
+     	<pattern> WHERE IS MESS * </pattern>
+     	<template>
+          <srai>WHERE IS CANTEEN * </srai>
+     	</template>
+          </category>
+     	<category>
+     	<pattern> WHERE IS BANK * </pattern>
+     	<template>
+     	   It is located in block 14
+     	</template>
+          </category>
+     	<category>
+     	<pattern> WHERE IS BOYS HOSTEL  * </pattern>
+     	<template>
+     	   It is located in block 33
+     	</template>
+          </category><category>
+     	<pattern> WHERE * GIRLS HOSTEL *</pattern>
+     	<template>
+     	    It is located in block 31
+     	</template>
+          </category>
+     	<category>
+     	<pattern> WHERE IS INTERNATIONAL HOSTEL * </pattern>
+     	<template>
+     	    It is located in block 28
+     	</template>
+          </category><category>
+     	<pattern> WHERE IS STAFF QUARTERS * </pattern>
+     	<template>
+     	    It is located in block 32
+     	</template>
+          </category>
+     	<category>
+     	<pattern> WHERE IS GROUND * </pattern>
+     	<template>
+     	    It is located nearby the KU Boys Hostel
+     	</template>
+          </category>
+     	<category>
+     	<pattern> WHERE IS SOCIAL HALL * </pattern>
+     	<template>
+     	    It is located in block 21
+     	</template>
+          </category>
+          	<category>
+     	<pattern> WHERE IS MULTI PURPOSE HALL * </pattern>
+     	<template>
+     	    <srai> WHERE IS SOCIAL HALL * </srai>
+     	</template>
+          </category>
+     	<category>
+     	<pattern>  WHERE IS PLAYROUND  * </pattern>
+     	<template>
+     	    <srai>WHERE IS GROUND *</srai>
+     	</template>
+          </category>
+     </aiml>

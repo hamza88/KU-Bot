@@ -1,0 +1,202 @@
+<?xml version = "1.0" encoding="ISO-8859-1"?>
+<aiml>
+
+<category>
+    <pattern></pattern>
+    <template></template>
+</category>
+
+<!-- Admission  -->
+<category>
+    <pattern>ADMISSION FORM</pattern>
+    <template>
+            <![CDATA[
+                    You can download the admission form for undergraduate <a href="www.ku.edu.np">here</a>
+            ]]>
+    </template>
+</category>
+
+<category>
+    <pattern>ADMISSION FORM 2016</pattern>
+    <template>
+            <srai>ADMISSION FORM</srai>
+    </template>
+</category>
+
+<category>
+    <pattern>DOWNLOAD</pattern>
+    <template>
+        <![CDATA[
+            You should try to specify what you want to download. Here are some links I can provide. <br />
+            <li>Entrance Application Form </li>
+            <li>Admission Form </li>
+            <li>Entrance Syllabus</li>
+            <li>Entrance Result</li>
+        ]]>
+    </template>
+</category>
+
+
+<!-- KUCAT SYLLABUS -->
+<category>
+    <pattern>KUCAT SYLLABUS</pattern>
+    <template>
+            <![CDATA[
+                    You can download the KUCAT Syllabus for undergraduate KUCAT exam  <a href="http://www.ku.edu.np">here</a>
+            ]]>
+    </template>
+</category>
+
+<category>
+    <pattern>SYLLABUS</pattern>
+    <template>
+            <srai> KUCAT SYLLABUS</srai>
+    </template>
+</category>
+
+<!-- KUCAT RESULT -->
+<category>
+    <pattern>KUCAT RESULT</pattern>
+    <template>
+            <![CDATA[
+                    You can download the result for undergraduate <a href="http://www.ku.edu.np">here</a>
+            ]]>
+    </template>
+</category>
+
+<category>
+    <pattern>RESULT</pattern>
+    <template>
+            <srai> KUCAT RESULT</srai>
+    </template>
+</category>
+
+
+<!-- KUCAT APPLICATION FORM -->
+<category>
+    <pattern>KUCAT FORM</pattern>
+    <template>
+            <![CDATA[
+                    You can download the application form for undergraduate <a href="www.ku.edu.np">here</a>
+            ]]>
+    </template>
+</category>
+
+<category>
+    <pattern>ENTRANCE FORM</pattern>
+    <template>
+            <srai>KUCAT FORM</srai>
+    </template>
+</category>
+
+<!-- KUCAT -->
+<category>
+    <pattern>KUCAT RESULT 2016</pattern>
+    <template>
+            <srai>KUCAT RESULT</srai>
+    </template>
+</category>
+
+
+<category>
+    <pattern>DOWNLOAD KUCAT FORM</pattern>
+    <template><srai>KUCAT FORM</srai></template>
+</category>
+
+
+<category>
+    <pattern>_ KUCAT SYLLABUS</pattern>
+    <template><srai>KUCAT SYLLABUS</srai></template>
+</category>
+
+<category>
+    <pattern>_ KUCAT * SYLLABUS</pattern>
+    <template><srai>KUCAT SYLLABUS</srai></template>
+</category>
+
+<category>
+    <pattern>_ SYLLABUS * KUCAT</pattern>
+    <template><srai>KUCAT SYLLABUS</srai></template>
+</category>
+
+
+<category>
+    <pattern>* SYLLABUS  KUCAT</pattern>
+    <template><srai>KUCAT SYLLABUS</srai></template>
+</category>
+
+<category>
+    <pattern>_ DOWNLOAD * KUCAT SYLLABUS</pattern>
+    <template><srai>KUCAT SYLLABUS</srai></template>
+</category>
+
+
+<category>
+    <pattern>_ PREPARE *</pattern>
+    <template>
+            <srai><star index="2" /></srai>
+    </template>
+</category>
+
+<category>
+    <pattern>_ LEARN * KUCAT *</pattern>
+    <template>
+            <srai>KUCAT SYLLABUS</srai>
+    </template>
+</category>
+
+<category>
+    <pattern>_ STUDY *</pattern>
+    <template>
+            <srai><star index="2" /></srai>
+    </template>
+</category>
+
+
+<!-- Admission Form -->
+<category>
+    <pattern>* DOWNLOAD * ADMISSION FORM</pattern>
+    <template><srai>ADMISSION FORM</srai></template>
+</category>
+
+<category>
+    <pattern>* DOWNLOAD ADMISSION FORM *</pattern>
+    <template><srai>ADMISSION FORM</srai></template>
+</category>
+
+<category>
+    <pattern>* LINK * ADMISSION FORM</pattern>
+    <template></template>
+</category>
+
+<category>
+    <pattern>_ LINK *</pattern>
+    <template>
+        <srai><star index="2" /></srai>
+    </template>
+</category>
+
+<category>
+    <pattern>_ LINK TO *</pattern>
+    <template>
+        <srai><star index="2" /></srai>
+    </template>
+</category>
+
+<category>
+    <pattern>_ DOWNLOAD *</pattern>
+    <template>
+        <srai><star index="2" /></srai>
+    </template>
+</category>
+
+<category>
+    <pattern>DOWNLOAD *</pattern>
+    <template>
+        <srai><star index="1" /></srai>
+    </template>
+</category>
+
+
+
+</aiml>
